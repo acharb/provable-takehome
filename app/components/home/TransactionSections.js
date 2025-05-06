@@ -20,7 +20,9 @@ export default function TransactionSections() {
 
     const fetchLatestTransactions = async () => {
       try {
-        const response = await fetch("/api/latest_transactions");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/latest_transactions`
+        );
         const data = await response.json();
         setLatestTransactions(data.transactions);
       } catch (error) {
@@ -34,7 +36,9 @@ export default function TransactionSections() {
 
     const fetchWhaleTransactions = async () => {
       try {
-        const response = await fetch("/api/whale_watch");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/whale_watch`
+        );
         const data = await response.json();
         setWhaleTransactions(data.transactions);
       } catch (error) {

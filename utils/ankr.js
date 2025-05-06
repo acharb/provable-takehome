@@ -1,6 +1,10 @@
 import axios from "axios";
 
-const ANKR_API_KEY = process.env.ANKR_API_KEY;
+const ANKR_API_KEY = process.env.NEXT_PUBLIC_ANKR_API_KEY;
+
+if (!ANKR_API_KEY) {
+  throw new Error("ANKR_API_KEY environment variable is not set");
+}
 
 export const getAnkrNodeData = async (method, params = []) => {
   try {

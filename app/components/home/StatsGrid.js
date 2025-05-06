@@ -16,7 +16,9 @@ export default function StatsGrid() {
     try {
       const fetchStats = async () => {
         setIsLoadingData(true);
-        const response = await fetch("/api/network_stats");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/network_stats`
+        );
         const data = await response.json();
 
         setNetworkStats(data);
