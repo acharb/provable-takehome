@@ -9,7 +9,6 @@ if (!ANKR_API_KEY) {
 export const getAnkrNodeData = async (method, params = []) => {
   try {
     const url = `https://rpc.ankr.com/eth/${ANKR_API_KEY}`;
-    console.log({ url }); // ALEC TODO - remove
 
     const response = await axios.post(
       url,
@@ -34,7 +33,6 @@ export const getAnkrNodeData = async (method, params = []) => {
 
 export const getAnkrTokenData = async (method, params = {}) => {
   const url = `https://rpc.ankr.com/multichain/${ANKR_API_KEY}`;
-  console.log({ url }); // ALEC TODO - remove
 
   try {
     const response = await axios.post(
